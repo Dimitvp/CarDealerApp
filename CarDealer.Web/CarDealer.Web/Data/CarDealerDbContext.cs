@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
-using CarDealer.Web.Models;
-
-namespace CarDealer.Web.Data
+﻿namespace CarDealer.Web.Data
 {
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+    using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+    using Microsoft.EntityFrameworkCore;
+    using CarDealer.Web.Models;
+
+    public class CarDealerDbContext : IdentityDbContext<ApplicationUser>
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+        public CarDealerDbContext(DbContextOptions<CarDealerDbContext> options)
             : base(options)
         {
         }
