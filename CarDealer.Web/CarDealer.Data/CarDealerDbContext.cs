@@ -13,8 +13,18 @@
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            base.OnModelCreating(builder);
-           
+            builder
+                .Entity<Sale>()
+                .HasOne(s => s.Car)
+                .WithMany(c => c.Sales)
+                .HasForeignKey(s => s.CarId);
+
+            builder
+                .Entity<Sale>()
+                .HasOne(s => s.Customer)
+                .WithMany(c => c.Sales)
+                .HasForeignKey(s => s.CustomerId);
+
         }
     }
 }
