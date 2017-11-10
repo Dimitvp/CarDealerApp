@@ -19,5 +19,7 @@
         public long TravelledDistance { get; set; }
 
         public List<Sale> Sales { get; set; } = new List<Sale>();
+
+        public List<CarPart> Parts { get; set; } = new List<CarPart>();
     }
 }

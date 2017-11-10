@@ -1,21 +1,18 @@
 ﻿namespace CarDealer.Data.Models
 {
-    using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    public class Customer
+    public class Supplier
     {
         public int Id { get; set; }
 
         [Required]
-        [MaxLength(200)]
+        [MaxLength(100)]
         public string Name { get; set; }
 
-        public DateTime BirthDate { get; set; }
+        public bool IsImporter { get; set; }
 
-        public bool IsYoungDriver { get; set; }
-
-        public List<Sale> Sales { get; set; } = new List<Sale>();
+        public List<Part> Parts { get; set; } = new List<Part>();
     }
 }
