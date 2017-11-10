@@ -6,7 +6,7 @@
     using System.Linq;
     using Models;
 
-    class CustomerService : ICustomerService
+    public class CustomerService : ICustomerService
     {
         private readonly CarDealerDbContext db;
 
