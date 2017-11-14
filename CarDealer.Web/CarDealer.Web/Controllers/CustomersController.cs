@@ -5,6 +5,7 @@
     using Microsoft.AspNetCore.Mvc;
     using Services;
 
+    [Route("customers")]
     public class CustomersController : Controller
     {
         private readonly ICustomerService customer;
@@ -29,5 +30,9 @@
                 OrderDirection = orderDirection
             });
         }
+
+        [Route("{id}")]
+        public IActionResult TotalSales(int id)
+            => this.View(this.customer.TotalSalesById(id));
     }
 }
