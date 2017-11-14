@@ -1,7 +1,7 @@
 ﻿namespace CarDealer.Web.Models.Cars
 {
     using System.Collections.Generic;
-    using CarDealer.Services.Models;
+    using CarDealer.Services.Models.Cars;
 
     public class CarsByMakeModel
     {

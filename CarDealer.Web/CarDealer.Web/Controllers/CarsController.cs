@@ -4,6 +4,7 @@
     using CarDealer.Web.Models.Cars;
     using Microsoft.AspNetCore.Mvc;
 
+    [Route("cars")]
     public class CarsController : Controller
     {
         private readonly ICarService cars;
@@ -13,7 +14,7 @@
             this.cars = cars;
         }
 
-        [Route("cars/{make}")]
+        [Route("cars/{make}", Order = 2)]
         public IActionResult ByMake(string make)
         {
             var cars = this.cars.ByMake(make);
@@ -24,5 +25,9 @@
                 Cars = cars
             });
         }
+
+        [Route("parts", Order = 1)]
+        public IActionResult Parts()
+            => View(this.cars.WithParts());
     }
 }
